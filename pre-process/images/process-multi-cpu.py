@@ -1,6 +1,8 @@
 """
+Generate preprocesed data in parallel.
+
 author: harsh
-date: Oct 2019
+date: Nov 2019
 """
 
 from PIL import Image

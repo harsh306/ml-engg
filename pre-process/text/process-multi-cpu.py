@@ -1,7 +1,8 @@
 """
-Generate preprocesed data for Learn to Rank model.
+Generate preprocesed data in parallel.
 
-date: Sep 2019
+date: Nov 2019
+author: harsh
 """
 
 import argparse
@@ -28,7 +29,6 @@ def read_test_file(filepath) -> Tuple[List, List, List]:
                 queries.append(query)
                 ids.append(int(idx))
             except ValueError:
-                print("invalid input data. should be in <query, id, fullname, shortname> format")
                 exit(1)
         assert len(queries) == len(ids)
         return queries, ids
@@ -50,7 +50,7 @@ def get_features(query: str, idx: int):
 def export(test_file: str, export_path: str, multi_thread: bool):
     """
     export preprocessed features for a given a query
-    :param test_file: path to file with test data. should be in <query, id, fullname, shortname> format
+    :param test_file: path to file with test data
     :param export_path: path to output file
     :param multi_thread: yes or no
     :return: None
@@ -59,8 +59,6 @@ def export(test_file: str, export_path: str, multi_thread: bool):
     f_exp = export_path
     # load test data from file
     queries, ids = read_test_file(test_file)
-    # evaluate each query and aggregate results
-    # if the expected id is not in the list of candidates, then that entry is excluded from evaluation
 
     if multi_thread:
         print(f"number of CPUs {mp.cpu_count()}")
