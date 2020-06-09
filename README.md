@@ -11,3 +11,4 @@
 9. Hyperparameter Optimization ( HYperband, Hyperopt Optuna )
 10. AWS Sagemaker (training, scaling and serving) [Link](https://github.com/awslabs/amazon-sagemaker-examples)
 11. Data formats : petastorm, TFrecords, Text, Image, Data Lake, Parquet 
+12 Tf Distrubuted code [Estimator](https://stackoverflow.com/questions/47223766/how-to-run-tensorflow-estimator-on-multiple-gpus-with-data-parallelism/56549909#56549909) [Keras](https://www.tensorflow.org/tutorials/distribute/keras)
